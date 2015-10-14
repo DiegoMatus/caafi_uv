@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% load static from static %}
+
+{% block style %}
+	<link rel="stylesheet" type="text/css" href="{% static "css/index_style.css" %}">
+{% endblock %}
+
+{% block content %}
+	<header>
+		<div class="container">
+			<figure><img id="logo-color" class="img-responsive" src="{% static "img/logo.png" %}"/></figure>
+		</div>
+	</header>
+	<section class="container main">
+		<div class="row">
+			<div class="my-content col-xs-12 col-sm-7 col-md-7 col-md-offset-1">
+				<figure>
+					<img class="img-responsive" id="image-world" src="{% static "img/world.png" %}" alt="World" width="50%" height="50%" />
+				</figure>
+			</div>
+			<div class="col-xs-10 col-xs-offset-1 col-sm-4 col-md-3">
+				<h3 class="text-center"><b>Selecciona un idioma</b></h3>
+				<ul class="list-group">
+					{% for language in languages %}
+						<a class="list-group-item my-list-group-item" href={% url "categories" language.slug %}>
+							<img src="{{ language.image.url }}" width='10%' height='10%' alt=""/>
+							<span class="badge my-badge"><span class="glyphicon glyphicon-menu-right"></span></span>{{ language.name }}
+						</a>
+					{% endfor %}
+				</ul>			
+			</div>
+		</div>
+	</section>
+{% endblock %}
