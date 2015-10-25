@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        {% load static from staticfiles %}
+        {% load static from static %}
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <!--Block title-->
@@ -11,9 +11,7 @@
         {% block style %}{% endblock %}
     </head>
 
-    <body>
-        <h1>Material en línea CAAFI</h1>
-        
+    <body>        
         <!--Block content-->
         {% block content %}{% endblock %}
 

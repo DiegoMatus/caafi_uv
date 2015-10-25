@@ -109,7 +109,7 @@ class Url(models.Model):
     CORRECTIONS = (
         ('SI', 'Tiene correción'),
         ('SI+', 'Tiene correción más explicación'),
-        ('NO', 'No tiene correción'),
+        ('NO', 'Sólo señala errores'),
         ('NA', 'No aplica')
     )
 
@@ -119,7 +119,8 @@ class Url(models.Model):
         ('B1', 'B1 - Intermedio'),
         ('B2', 'B2 - Intermedio alto'),
         ('C1', 'C1 - Avanzado'),
-        ('C2', 'C2 - Perfeccionamiento')
+        ('C2', 'C2 - Perfeccionamiento'),
+        ('T0', 'T0 - Todos')
     )
 
     address = models.URLField('Dirección', max_length=255)

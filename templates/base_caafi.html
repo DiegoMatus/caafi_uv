@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load static from static %}
+{% block style %}
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{% url "index" %}">
+                    <img id="logo-color" class="navbar-brand brand" src="{% static 'images/logo.png' %}" alt="logotipo">
+                </a>
+            </div>
+        </div>
+        <div class="container">
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="#">Action</a></li>
+    <li><a href="#">Another action</a></li>
+    <li><a href="#">Something else here</a></li>
+    <li><a href="#">Separated link</a></li>
+  </ul>
+</div>
+    
+
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    <img src="{{ menu.image.url }}" class="img-responsive col-xs-3 col-xd-offset-3 col-md-5" /> {{menu.name}}<span class="caret"></span>
+                  </a>
+                  <ul class="dropdown-menu" role="menu">
+                    {% for lang in languages %}
+                        <li>
+                            <a href="{{ lang.get_absolute_url }}"><img src="{{ lang.image.url }}" width='20%' height='20%'/> {{lang.name}}</a>
+                        </li>
+                    {% endfor %}
+                  </ul>
+                </li>
+                {% block navbar %}{% endblock %}
+              </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static "js/scripts.js" %}" type="text/javascript" charset="utf-8" async defer></script>
+{% endblock %}

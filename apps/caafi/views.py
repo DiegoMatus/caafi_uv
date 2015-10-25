@@ -19,23 +19,26 @@ def sorting(items):
 
 # Create your views here.
 def index(request):
-    languages = Language.objects.all()
+    languages = Language.objects.all() #Hacerlo global
     languages = sorting(languages)
-    context = {'languages': languages}
+    context = { 'languages': languages }
     return render(request, 'index.html', context)
 
 
 def categories_view(request, language_slug):
-	return render(request, 'index.html')
+	languages = Language.objects.all();
+	languages = sorting(languages)
+	context = { 'languages': languages }
+	return render(request, 'categories.html', context)
 
 def subcategories_view(request, language_slug, category_slug):
-	return render(request, 'index.html')
+	return render(request, 'subcategories.html')
 
 def urls_view(request, language_slug, category_slug, subcategory_slug):
-	return render(request, 'index.html')
+	return render(request, 'urls.html')
 
 def reported_urls_view(request):
-	return render(request, 'index.html')
+	return render(request, 'urls.html')
 
 #def lista_categorias(request, language_name):
 #    languages = Language.objects.all()

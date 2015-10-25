@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 admin.site.site_header = 'CAAFI'
 urlpatterns = patterns('apps.caafi.views',
-    url(r'^$', 'index'),
+    url(r'^$', 'index', 	name='index'),
     url(r'^(?P<language_slug>\w+)/(?P<category_slug>[\w|\W]+)/(?P<subcategory_slug>[\w|\W]+)/$',	'urls_view', 		name='urls'),
     url(r'^(?P<language_slug>\w+)/(?P<category_slug>[\w|\W]+)/$', 							'subcategories_view',		name='subcategories'),
     url(r'^(?P<language_slug>\w+)/$', 														'categories_view',			name='categories'),
