@@ -118,7 +118,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 ALLOWED_HOSTS = ['*']
 
-DEBUG = False
+DEBUG = True
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
