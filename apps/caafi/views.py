@@ -28,7 +28,8 @@ def index(request):
 def categories_view(request, language_slug):
 	languages = Language.objects.all();
 	languages = sorting(languages)
-	context = { 'languages': languages }
+	language = Language.objects.get(slug = language_slug)
+	context = { 'languages': languages, 'language': language }
 	return render(request, 'categories.html', context)
 
 def subcategories_view(request, language_slug, category_slug):

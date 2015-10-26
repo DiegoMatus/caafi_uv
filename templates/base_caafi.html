@@ -4,49 +4,44 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
 {% endblock %}
 
-{% block content %}
+{% block navbar %}
     <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <a class="navbar-brand" href="{% url "index" %}">
-                    <img id="logo-color" class="navbar-brand brand" src="{% static 'images/logo.png' %}" alt="logotipo">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a href="{% url "index" %}">
+                    <img class="navbar-brand" src="{% static 'img/logo.png' %}" alt="logotipo">
                 </a>
             </div>
-        </div>
-        <div class="container">
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    Dropdown
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
-</div>
-    
 
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    <img src="{{ menu.image.url }}" class="img-responsive col-xs-3 col-xd-offset-3 col-md-5" /> {{menu.name}}<span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu" role="menu">
-                    {% for lang in languages %}
-                        <li>
-                            <a href="{{ lang.get_absolute_url }}"><img src="{{ lang.image.url }}" width='20%' height='20%'/> {{lang.name}}</a>
-                        </li>
-                    {% endfor %}
-                  </ul>
-                </li>
-                {% block navbar %}{% endblock %}
-              </ul>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <img src="{{ language.image.url }}" class="img-responsive col-xs-3 col-xd-offset-3 col-md-5" /> {{language.name}}<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            {% for lang in languages %}
+                                <li>
+                                    <a href={% url "categories" lang.slug %}><img src="{{ lang.image.url }}" width='20%' height='20%'/> {{lang.name}}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% block menu %}{% endblock %}
+                </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 {% endblock %}
-
+{% block content %}{% endblock %}
 {% block scripts %}
     <script src="{% static "js/scripts.js" %}" type="text/javascript" charset="utf-8" async defer></script>
 {% endblock %}
