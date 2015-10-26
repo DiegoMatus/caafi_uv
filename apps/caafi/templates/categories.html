@@ -7,16 +7,16 @@
 	<div class="row">
 		{% for category in categories %}
 		<div class="col-xs-10 col-xs-offset-1 col-sm-3 col-md-3">
-			<a href={% url "lista_subcategorias" language_name=language category_name=category.slug %}>
+			<a href={% url "subcategories" language.name language.categories.slug %}>
 				<div>
 					
 				</div>
 				<div class="category-content">
-					<img class="img-responsive" src="{{ category.image.url }}" />
-					<p class="text-gray">{{category.subcategories.count}} Subcategorías</p>
+					<img class="img-responsive" src="{{ language.categories.image.url }}" />
+					<p class="text-gray">{{language.categories.subcategories.count}} Subcategorías</p>
 				</div>
 				<div >
-					<h4>{{ category.name }}<br><small>{{ category.description }}</small></h4>
+					<h4>{{ language.categories.name }}<br><small>{{ language.categories.description }}</small></h4>
 				</div>	
 			</a>		
 		</div>
