@@ -1,28 +1,25 @@
-{% extends "caafi/base.html" %}
+{% extends "base_caafi.html" %}
 {% load static from staticfiles %}
-{% block title %} {{menu}}|Categorías {% endblock %}
-{% block style %}
-	<link rel="stylesheet" href="/static/css/style.css">
-	<link rel="stylesheet" href="/static/css/style2.css">
+{% block title %} Lista de material {% endblock %}
+
+{% block menu %}
+<li class="dropdown">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorías<span class="caret"></span></a>
+	<ul class="dropdown-menu" role="menu">
+		{% for category in categories|dictsort:"name" %}
+			<li><a href="{% url "categories" category.language.slug %}">{{category.name}}</a></li>
+		{% endfor %}
+	</ul>
+</li>
 {% endblock %}
+
 {% block content %}
-	<h2 class="title text-center">Categorías<br/></h2>
-	<div class="row">
-		{% for category in categories %}
-		<div class="col-xs-10 col-xs-offset-1 col-sm-3 col-md-3">
-			<a href={% url "lista_subcategorias" language_name=language category_name=category.slug %}>
-				<div>
-					
-				</div>
-				<div class="category-content">
-					<img class="img-responsive" src="{{ category.image.url }}" />
-					<p class="text-gray">{{category.subcategories.count}} Subcategorías</p>
-				</div>
-				<div >
-					<h4>{{ category.name }}<br><small>{{ category.description }}</small></h4>
-				</div>	
-			</a>		
-		</div>
+	<h2 class="title text-center">{{ category }}</h2>
+	<div class="list-group">
+		{% for subcategory in subcategories %}
+			<a class="text-justify list-group-item subcategory" href="{% url "urls" language.slug category.slug subcategory.slug %}">{{ subcategory.name }}<p class="small text-right"> {{ subcategory.urls_subcategory.count }} direcciones</p></a>
+		{% empty %}
+			<h3 class="text-center">No existen subcategorías registradas aún.</h3>
 		{% endfor %}
 	</div>
 {% endblock %}

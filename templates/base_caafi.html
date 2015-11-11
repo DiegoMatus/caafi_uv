@@ -28,7 +28,7 @@
                             <img src="{{ language.image.url }}" class="img-responsive col-xs-3 col-xd-offset-3 col-md-5" /> {{language.name}}<span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            {% for lang in languages %}
+                            {% for lang in languages|dictsort:"name" %}
                                 <li>
                                     <a href={% url "categories" lang.slug %}><img src="{{ lang.image.url }}" width='20%' height='20%'/> {{lang.name}}</a>
                                 </li>

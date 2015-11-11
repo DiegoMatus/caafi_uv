@@ -1,16 +1,13 @@
 {% extends "base_caafi.html" %}
 {% load static from staticfiles %}
-{% block title %} Categorías {% endblock %}
+{% block title %} Categorías | {{ language.name }}{% endblock %}
 
 {% block content %}
 <h2 class="title text-center">Categorías<br/></h2>
 	<div class="row">
-		{% for category in language.categories %}
-		<div class="col-xs-10 col-xs-offset-1 col-sm-3 col-md-3">
-			<a href={% url "subcategories" category.name category.slug %}>
-				<div>
-					
-				</div>
+		{% for category in categories|dictsort:"name" %}
+		<div class="col-xs-10 col-xs-offset-1 col-sm-3">
+			<a href="{% url "subcategories" language.slug category.slug %}">
 				<div class="category-content">
 					<img class="img-responsive" src="{{ category.image.url }}" />
 					<p class="text-gray">{{category.subcategories.count}} Subcategorías</p>
@@ -20,6 +17,8 @@
 				</div>	
 			</a>		
 		</div>
+		{% empty %}
+			<h3 class="text-center">No existen categorías registradas aún.</h3 class="text-center">
 		{% endfor %}
 	</div>
 {% endblock %}

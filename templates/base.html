@@ -25,9 +25,9 @@
             	</div>
             </div>
         </footer>
+        <script src="{% static "js/jquery.min.js" %}" type="text/javascript" charset="utf-8" async defer></script>
+        <script src="{% static "js/bootstrap.min.js" %}" type="text/javascript" charset="utf-8" async defer></script>
+        {% block scripts %}{% endblock %}
     </body>
 
-    <script src="{% static "js/jquery.min.js" %}" type="text/javascript" charset="utf-8" async defer></script>
-    <script src="{% static "js/bootstrap.min.js" %}" type="text/javascript" charset="utf-8" async defer></script>
-    {% block scripts %}{% endblock %}
 </html>

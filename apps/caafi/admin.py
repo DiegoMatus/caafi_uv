@@ -2,7 +2,7 @@ from django.contrib import admin
 from apps.caafi.models import Language, Category, Subcategory, Url, Competence, Exercise
 
 class CategoryAdmin (admin.ModelAdmin):
-	list_display = ('language', 'name', 'description')
+	list_display = ('name', 'language', 'description')
 	list_filter = [ 'language' ]
 
 class SubcategoryAdmin (admin.ModelAdmin):
