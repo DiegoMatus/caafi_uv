@@ -10,4 +10,4 @@ urlpatterns = patterns('apps.caafi.views',
     url(r'^(?P<language_slug>\w+)/(?P<category_slug>[\w|\W]+)/$', 							'subcategories_view',		name='subcategories'),
     url(r'^(?P<language_slug>\w+)/$', 														'categories_view',			name='categories'),
     url(r'^url/add', 																		'reported_urls_view',		name='reported_urls'),
-) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 	#Servir estáticos en desarrollo
+) #+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 	#Servir estáticos en desarrollo
