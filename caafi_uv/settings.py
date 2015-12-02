@@ -109,9 +109,15 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '../static/').replace('\\', '/'))
 STATIC_URL = '/static/'
 
+#Heroku's config
+#Overwrite the below config
+import dj_database_url
+DATABASES['default'] = dj_database_url.config()
+
 
 ############## Heroku's config. ##############################
 # Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 try:
