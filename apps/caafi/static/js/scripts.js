@@ -1,8 +1,8 @@
 function main(){
-	//$('#instrumentos').DataTable({
-	//	autoFill: true,
-	//	responsive: true,
-	//});
+	$('#categories').DataTable({
+		autoFill: true,
+		responsive: true,
+	});
 }
 
 
