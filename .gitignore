@@ -1,6 +1,5 @@
 env
 db.sqlite3
-static
 media
 *.pyc
 __pycache__

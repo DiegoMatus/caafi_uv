@@ -1,0 +1,62 @@
+@font-face {
+    font-family: 'museo_sans500';
+    src: url("../fonts/MuseoSans_500-webfont.62d965c63044.eot");
+    src: url("../fonts/MuseoSans_500-webfont.62d965c63044.eot?#iefix") format('embedded-opentype'),
+         url("../fonts/MuseoSans_500-webfont.1990e4af5dc3.woff2") format('woff2'),
+         url("../fonts/MuseoSans_500-webfont.347a2e211161.woff") format('woff'),
+         url("../fonts/MuseoSans_500-webfont.1a3671ae60f3.ttf") format('truetype'),
+         url("../fonts/MuseoSans_500-webfont.b3d79601f19e.svg#museo_sans500") format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	font-family: 'museo_sans500';
+	background: #FFFFFF; 
+	color: #111111;
+	/*margin:0;
+	padding:0;
+	height:100%*/
+}
+
+footer {
+	font-family: Helvetica;
+	padding: 1% 0;
+}
+
+h1 {
+	display: none;
+}
+
+/*section {
+	padding-top: 3%;
+}*/
+
+.arrow {
+	color: #BBBBBB;
+}
+
+.my-badge {
+	color: #BBBBBB;
+	background-color: #FFFFFF;
+	font-size: 16px;
+}
+
+.my-list-group-item:first-child {
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+
+.my-list-group-item:last-child {
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+}
+
+/*#image-world {
+	margin: 0 25%;
+}*/
+
+#logo-color {
+	width: 25%;
+	padding: 2.5% 2.5% 5% 2.5%;
+}

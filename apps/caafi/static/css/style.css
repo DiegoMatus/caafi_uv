@@ -1,0 +1,151 @@
+/** {
+	border: solid 1px red;
+}*/
+
+body {
+	padding-top: 70px;
+	background-image: url("/static/img/frances_background.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: bottom right;
+	background-size: 1358px 540px;
+}
+
+footer {
+	width: 100%;
+	padding: 0.5% 0;
+	position: fixed;
+	bottom: 0;
+}
+
+h1 {
+	display: none;
+}
+
+p {
+	margin: 0.5% 0;
+}
+
+.main {
+	margin-bottom: 100px;
+}
+
+a {
+	color: #111111;
+}
+
+a:hover, a:focus {
+	text-decoration: none;
+	color: #337AB7;
+}
+
+h2 {
+	color: #111111;
+}
+
+.category-content {
+	background-color: #D33333;
+	height: 10em;
+	margin-bottom: 2%;
+	text-align: center;
+	padding-top: 5%;
+}
+
+.container {
+	opacity: 100%;
+}
+
+.navbar {
+	background: #FFFFFF;
+	border-bottom: 1px solid #33B77A;
+}
+
+.navbar-default .navbar-brand, .navbar-brand:focus, .navbar-nav > li > a, .navbar-nav > li > a:focus {
+	color: #666666;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-nav > li > a:hover{
+	color: #000000;
+}
+
+.text-gray {
+	color: #222222;
+}
+
+/*#logo-color {
+	width: 100%;
+}
+
+a {
+	color: #337AB7;
+}
+
+a:hover {
+	color: #337AB7;
+	text-decoration: underline;
+}*/
+
+body {
+	color: #111111;
+}
+
+table.dataTable.no-footer {
+    border-bottom: 1px solid #999999;
+}
+
+.btn-custom {
+	background-color: #AAAAAA;
+	border-color: #999999;
+}
+
+.btn-custom:hover, .btn-custom:focus {
+	cursor: not-allowed;
+	background-color: #AAAAAA;
+	border-color: #999999;
+}
+
+.list-group {
+	padding: 2.5%;
+}
+
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+	background-color: #33B77A;
+	border-color: #33B77A;
+}
+
+.table-bordered thead tr th {
+    border: 1px solid #999999;
+}
+
+.table-bordered thead tr {
+	background: #33B77A;
+	color: #EEEEEE;
+}
+
+.text-A1 {
+    color: #FF8C00;
+}
+
+.text-A2 {
+    color: #006400;
+}
+
+.text-B1 {
+    color: #191970;
+}
+
+.text-B2 {
+    color: #FBDE42;
+}
+
+.text-C1 {
+    color: #CC0000;
+}
+
+.text-C2 {
+    color: #000000;
+}
+
+#row-selected {
+	background: #AAAAAA;
+}
