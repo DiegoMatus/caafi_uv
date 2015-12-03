@@ -119,7 +119,8 @@ MEDIA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '../media/
 ############## Heroku's config. ##############################
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+#STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 try:
     from .local_settings import *
