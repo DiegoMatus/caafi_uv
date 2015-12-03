@@ -2,7 +2,7 @@ function main(){
 	$('#categories').DataTable({
 		autoFill: true,
 		responsive: true,
-	});
+	});	
 }
 
 
