@@ -118,7 +118,7 @@ DATABASES['default'] = dj_database_url.config()
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
 
 try:
     from .local_settings import *
