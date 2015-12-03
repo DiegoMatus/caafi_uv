@@ -103,7 +103,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 #STATIC_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '../static/').replace('\\', '/'))
 MEDIA_URL = '/media/'
@@ -118,6 +117,7 @@ DATABASES['default'] = dj_database_url.config()
 ############## Heroku's config. ##############################
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 try:
