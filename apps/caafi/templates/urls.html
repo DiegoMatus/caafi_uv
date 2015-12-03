@@ -1,24 +1,20 @@
-{% extends "caafi/base.html" %}
+{% extends "base_caafi.html" %}
 {% load static from static %}
-{% block title %}Lista de material{% endblock %}
-{% block style %}
-    <link rel="stylesheet" href= {% static "css/style.css" %}>
-    <link rel="stylesheet" href="/static/css/style2.css">
-    <link rel="stylesheet" href="/static/css/style3.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+{% block title %} Lista de material {% endblock %}
+
+{% block menu %}
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorías<span class="caret"></span></a>
+    <ul class="dropdown-menu" role="menu">
+        {% for category in categories|dictsort:"name" %}
+            <li><a href="{% url "categories" category.language.slug %}">{{category.name}}</a></li>
+        {% endfor %}
+    </ul>
+</li>
 {% endblock %}
-{% block navbar %}
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorías<span class="caret"></span></a>
-        <ul class="dropdown-menu" role="menu">
-            {% for category in categories %}
-                <li><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
-            {% endfor %}
-        </ul>
-    </li>
-{% endblock %}
+
 {% block content %}
-    <h2 class="title text-center">{{ subcategory }}</h2>
+    <h2 class="title text-center">{{ language.subcategory }}</h2>
     <table id="categories" class="display table-bordered table-responsive">
         <thead>
         <tr class="title">

@@ -28,8 +28,13 @@ def subcategories_view(request, language_slug, category_slug):
 	return render(request, 'subcategories.html', context)
 
 def urls_view(request, language_slug, category_slug, subcategory_slug):
-	context = { 'languages': languages, 'language': language, 'categories': categories }
-	return render(request, 'urls.html')
+	languages = Language.objects.all()
+	language = get_object_or_404(Language, slug = language_slug)
+	categories = language.categories.all()
+	subcategory = get_object_or_404(Subcategory, slug = subcategory_slug)
+	urls = subcategory.urls_subcategory.all()
+	context = { 'languages': languages, 'language': language, 'categories': categories, 'urls': urls }
+	return render(request, 'urls.html', context)
 
 @csrf_exempt
 def reported_urls_view(request):
