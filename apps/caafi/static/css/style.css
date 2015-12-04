@@ -146,6 +146,10 @@ table.dataTable.no-footer {
     color: #000000;
 }
 
+.text-T0 {
+    color: #F4D10F;
+}
+
 #row-selected {
 	background: #AAAAAA;
 }
