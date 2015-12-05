@@ -46,28 +46,3 @@ def reported_urls_view(request):
         return JsonResponse(dict({'msj': 'Haz reportado la direccion: ' + url.address}))
     else:
         return render('urls.html')
-#
-#
-#def lista_urls(request, language_name, category_name, subcategory_name):
-#    languages = Language.objects.all()
-#    languages = sorting(languages)
-#    language_id = Language.objects.filter(slug=language_name)
-#    if len(language_id) > 0:
-#        language = get_object_or_404(Language, pk=language_id[0].id)
-#        # menu_name = language.name
-#        categories = language.categories.all()
-#        categories = sorting(categories)
-#        category_id = Category.objects.filter(slug=category_name)
-#        if len(category_id) > 0:
-#            category = get_object_or_404(Category, pk=category_id[0].id)
-#            subcategory_id = Subcategory.objects.filter(slug=subcategory_name)
-#            if len(subcategory_id) > 0:
-#                subcategory = get_object_or_404(Subcategory, pk=subcategory_id[0].id)
-#                urls = subcategory.urls2.all()
-#                return render_to_response('caafi/urls.html', {'languages': languages, 'menu': language, 'language': language_name,
-#                                                  'categories': categories, 'urls': urls,
-#                                                  'subcategory': subcategory.name}, context_instance =RequestContext(request))
-#    #return render_to_response('caafi/404.html')
-#
-#
-#def urls_reportadas(request):

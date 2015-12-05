@@ -3,12 +3,13 @@
 }*/
 
 body {
-	padding-top: 70px;
+	padding: 70px 0;/*CHANGE RECENT*/
 	background-image: url("/static/img/frances_background.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: bottom right;
 	background-size: 1358px 540px;
+	color: #111111;
 }
 
 footer {
@@ -85,9 +86,6 @@ a:hover {
 	text-decoration: underline;
 }*/
 
-body {
-	color: #111111;
-}
 
 table.dataTable.no-footer {
     border-bottom: 1px solid #999999;
@@ -147,7 +145,7 @@ table.dataTable.no-footer {
 }
 
 .text-T0 {
-    color: #F4D10F;
+    color: #14D10F;
 }
 
 #row-selected {
