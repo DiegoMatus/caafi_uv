@@ -3,7 +3,7 @@
 }*/
 
 body {
-	padding: 70px 0;/*CHANGE RECENT*/
+	padding: 70px 0 100px 0;/*CHANGE RECENT*/
 	background-image: url("/static/img/frances_background.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;

@@ -28,6 +28,7 @@ function main(){
 				link: $('#row-selected #url').text()
 			},
 			success : function(data){
+				$('#btn-reported').addClass('btn-custom');
 				alert(JSON.stringify(data.msj));
 			},
 			error : function(error){
