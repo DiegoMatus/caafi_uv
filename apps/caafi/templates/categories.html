@@ -9,8 +9,8 @@
 			{% for category in categories|dictsort:"name" %}
 			<div class="col-xs-10 col-md-4">
 				<a href="{% url "subcategories" language.slug category.slug %}">
-					<div class="category-content">
-						<img class="img-responsive" src="{{ category.image.url }}" />
+					<div class="category-content row">
+						<img class="col-xs-12 img-responsive" src="{{ category.image.url }}" />
 						<p class="text-gray">{{category.subcategories.count}} Subcategorías</p>
 					</div>
 					<div >
