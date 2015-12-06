@@ -12,14 +12,14 @@
 			<figure><img id="logo-color" src="{% static "img/logo.png" %}"/></figure>
 		</div>
 	</header>
-	<section class="container main">
-		<div class="row">
-			<div class="my-content col-xs-12 col-sm-7 col-md-7 col-md-offset-1">
+	<section>
+		<div class="container">
+			<div class="col-xs-12 col-md-5 col-md-offset-1">
 				<figure>
-					<img class="img-responsive" id="image-world" src="{% static "img/world.png" %}" alt="World" width="50%" height="50%" />
+					<img class="img-responsive" id="image-world" src="{% static "img/world.png" %}" alt="World" />
 				</figure>
 			</div>
-			<div class="col-xs-10 col-xs-offset-1 col-sm-4 col-md-3">
+			<div class="col-xs-10 col-xs-offset-1 col-sm-4 col-md-3 col-md-offset-2">
 				<h3 class="text-center"><b>Selecciona un idioma</b></h3>
 				<ul class="list-group">
 					{% for language in languages|dictsort:"name" %}

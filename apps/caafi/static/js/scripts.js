@@ -15,9 +15,12 @@ function main(){
 	
 	$('#categories tbody tr').on('click', function(){
 		$('#btn-reported').removeClass('btn-custom');
+		document.getElementById('btn-reported').disabled = false;
 		$('#row-selected').removeAttr('id');
 		$(this).attr('id', 'row-selected');
 	});
+
+	document.getElementById('btn-reported').disabled = true;
 
 	$('#agregar_url').on('submit', function(e){
 		e.preventDefault();
