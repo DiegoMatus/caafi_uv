@@ -1,6 +1,5 @@
 var colors = ['#1AAEDF', 'F0992A', '#D91B5B', '#F7D947', '#8DC74D', '#F0DEA4', '#F9C8A7', '#85235B'];
 
-function main(){
 	var i = 0;
 	$('.category-content').each(function(){
 		$(this).css('background-color', colors[i])
@@ -44,7 +43,3 @@ function main(){
 			}
 		});
 	});
-}
-
-
-$(document).on('ready', main);
