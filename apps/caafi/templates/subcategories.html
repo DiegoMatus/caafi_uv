@@ -7,7 +7,7 @@
 	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorías<span class="caret"></span></a>
 	<ul class="dropdown-menu" role="menu">
 		{% for category in categories|dictsort:"name" %}
-			<li><a href="{% url "categories" category.language.slug %}">{{category.name}}</a></li>
+			<li><a href="{% url "subcategories" category.language.slug category.slug %}">{{category.name}}</a></li>
 		{% endfor %}
 	</ul>
 </li>
