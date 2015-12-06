@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'museo_sans500';
-    src: url('../fonts/MuseoSans_500-webfont.eot');
-    src: url('../fonts/MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/MuseoSans_500-webfont.woff2') format('woff2'),
-         url('../fonts/MuseoSans_500-webfont.woff') format('woff'),
-         url('../fonts/MuseoSans_500-webfont.ttf') format('truetype'),
-         url('../fonts/MuseoSans_500-webfont.svg#museo_sans500') format('svg');
+    src: url("../fonts/MuseoSans_500-webfont.62d965c63044.eot");
+    src: url("../fonts/MuseoSans_500-webfont.62d965c63044.eot?#iefix") format('embedded-opentype'),
+         url("../fonts/MuseoSans_500-webfont.1990e4af5dc3.woff2") format('woff2'),
+         url("../fonts/MuseoSans_500-webfont.347a2e211161.woff") format('woff'),
+         url("../fonts/MuseoSans_500-webfont.1a3671ae60f3.ttf") format('truetype'),
+         url("../fonts/MuseoSans_500-webfont.b3d79601f19e.svg#museo_sans500") format('svg');
     font-weight: normal;
     font-style: normal;
 }
