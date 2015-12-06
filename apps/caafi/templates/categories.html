@@ -10,7 +10,7 @@
 			<div class="col-xs-10 col-md-4">
 				<a href="{% url "subcategories" language.slug category.slug %}">
 					<div class="category-content row">
-						<img class="col-xs-12 img-responsive" src="{{ category.image.url }}" />
+						<img id="category-image" class="col-xs-4 col-md-6 col-xs-offset-4 col-md-offset-2 img-responsive" src="{{ category.image.url }}" />
 						<p class="text-gray">{{category.subcategories.count}} Subcategorías</p>
 					</div>
 					<div >
