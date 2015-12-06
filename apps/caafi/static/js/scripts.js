@@ -12,6 +12,11 @@ function main(){
 	}
 
 	$('.subcategory:first-child').addClass('active');
+
+	$('#categories').DataTable({
+		autoFill: true,
+		responsive: true,
+	});	
 	
 	$('#categories tbody tr').on('click', function(){
 		$('#btn-reported').removeClass('btn-custom');
@@ -39,12 +44,6 @@ function main(){
 			}
 		});
 	});
-
-	
-	$('#categories').DataTable({
-		autoFill: true,
-		responsive: true,
-	});	
 }
 
 

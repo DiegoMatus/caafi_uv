@@ -10,10 +10,6 @@
     font-style: normal;
 }
 
-* {
-	border: solid 1px red;
-}
-
 body {
 	font-family: 'museo_sans500';
 	background: #FFFFFF; 
