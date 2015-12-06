@@ -35,8 +35,7 @@ var colors = ['#1AAEDF', 'F0992A', '#D91B5B', '#F7D947', '#8DC74D', '#F0DEA4', '
 				link: $('#row-selected #url').text()
 			},
 			success : function(data){
-				$('#btn-reported').addClass('btn-custom');
-				alert(JSON.stringify(data.msj));
+				swal(JSON.stringify(data.msj), 'success');
 			},
 			error : function(error){
 				console.log(error);

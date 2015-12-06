@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/sweetalert.css" %}">
 {% endblock %}
 
 {% block navbar %}
@@ -46,5 +47,6 @@
 {% block content %}{% endblock %}
 {% block scripts %}
     <script src="//cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+    <script src="{% static "js/sweetalert.min.js" %}" type="text/javascript" charset="utf-8" async defer></script>
     <script src="{% static "js/scripts.js" %}" type="text/javascript" charset="utf-8" async defer></script>
 {% endblock %}
