@@ -35,7 +35,18 @@ var colors = ['#1AAEDF', 'F0992A', '#D91B5B', '#F7D947', '#8DC74D', '#F0DEA4', '
 				link: $('#row-selected #url').text()
 			},
 			success : function(data){
-				swal(JSON.stringify(data.msj), 'success');
+				swal({
+				  title: "¿Estás seguro?",
+				  text: "Sólo reporta las direcciones que no funcionen correctamente",
+				  type: "warning",
+				  showCancelButton: true,
+				  confirmButtonColor: "#DD6B55",
+				  confirmButtonText: "Reportar",
+				  closeOnConfirm: false
+				},
+				function(){
+				  swal("Reportada!", "Revisaremos la dirección en breve.", "success");
+				});
 			},
 			error : function(error){
 				console.log(error);
