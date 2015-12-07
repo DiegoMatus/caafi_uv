@@ -6,7 +6,7 @@
 <h2 class="title text-center">Categorías<br/></h2>
 	<div class="">
 		{% for category in categories|dictsort:"name" %}
-			<div class="col-xs-12 col-md-4">
+			<div class="category-section col-xs-12 col-md-4">
 				<a class="row" href="{% url "subcategories" language.slug category.slug %}">
 					<div class="col-xs-12 category-content">
 						<div class="row">
