@@ -4,18 +4,26 @@
 
 {% block content %}
 <h2 class="title text-center">Categorías<br/></h2>
-	<div class="row">
+	<div class="container row">
 		{% for category in categories|dictsort:"name" %}
-		<div class="col-xs-12 col-md-4">
-			<a href="{% url "subcategories" language.slug category.slug %}">
-				<div class="category-content">
-					<img class="img-responsive" src="{{ category.image.url }}" />
-					<p class="text-gray">{{category.subcategories.count}} Subcategorías</p>
-				</div>
-				<div >
-					<h4>{{ category.name }}<br><small>{{ category.description }}</small></h4>
-				</div>	
-			</a>		
+		<div class="container">
+			<div class="col-xs-12 col-md-4">
+				<a class="row" href="{% url "subcategories" language.slug category.slug %}">
+					<div class="col-xs-12 category-content">
+						<div class="row">
+							<img class="col-xs-6 col-xs-offset-3" class="img-responsive" src="{{ category.image.url }}" />
+						</div>
+						<div class="row">
+							<p class="col-xs-6 col-xs-offset-3 text-gray">{{category.subcategories.count}} Subcategorías</p>
+						</div>
+					</div>
+					<div class="col-xs-12">
+						<div >
+							<h4>{{ category.name }}<br><small>{{ category.description }}</small></h4>
+						</div>	
+					</div>
+				</a>		
+			</div>
 		{% empty %}
 			<h3 class="text-center">No existen categorías registradas aún.</h3 class="text-center">
 		</div>
