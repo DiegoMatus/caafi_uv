@@ -8,8 +8,6 @@ import os
 
 # Create your models here.
 def get_file_path_languages(instance, filename):
-    ext = filename.split('.')[-1]
-    filename = "%s.%s" % (uuid.uuid4(), ext)
     return os.path.join('images/languages', filename)
 
 
@@ -33,8 +31,6 @@ class Language(models.Model):
 
 #############################################################################################
 def get_file_path_category(instance, filename):
-    ext = filename.split('.')[-1]
-    filename = "%s.%s" % (uuid.uuid4(), ext)
     return os.path.join('images/categories', filename)
 
 

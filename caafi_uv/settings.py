@@ -115,6 +115,8 @@ MEDIA_ROOT = os.path.normpath(os.path.join(os.path.dirname(__file__), '../media/
 import dj_database_url
 DATABASES['default'] = dj_database_url.config()
 
+#Allow CORS
+CORS_ORIGIN_ALLOW_ALL = True
 
 ############## Heroku's config. ##############################
 # Simplified static file serving.
