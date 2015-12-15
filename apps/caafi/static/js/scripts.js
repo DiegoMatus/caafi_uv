@@ -13,8 +13,16 @@ var colors = ['#1AAEDF', 'F0992A', '#D91B5B', '#F7D947', '#8DC74D', '#F0DEA4', '
 	$('.subcategory:first-child').addClass('active');
 
 	$('#categories').DataTable({
-		autoFill: true,
-		responsive: true
+  		"columns": [
+    		{ "width": "20px" },
+    		{ "width": "20px" },
+    		{ "width": "20px" },
+    		{ "width": "20px" },
+    		{ "width": "20px" },
+    		{ "width": "20px" },
+    		{ "width": "20px" },
+    		{ "width": "20px" }
+  		]
 
 	});	
 	
