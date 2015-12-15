@@ -16,10 +16,13 @@
 {% block content %}
 	<h2 class="title text-center">{{ category }}</h2>
 	<div class="list-group">
-		{% for subcategory in subcategories %}
+		{% for subcategory in subcategories|dictsort:"name" %}
 			<a class="text-justify list-group-item subcategory" href="{% url "urls" language.slug category.slug subcategory.slug %}">{{ subcategory.name }}<p class="small text-right"> {{ subcategory.urls_subcategory.count }} direcciones</p></a>
 		{% empty %}
 			<h3 class="text-center">No existen subcategorías registradas aún.</h3>
 		{% endfor %}
 	</div>
+{% endblock %}
+{% block footer %}
+	<a class="text-success" href="" data-toggle="modal" data-target="#myModal">¿Dudas, comentarios o sugerencias? ¡Escríbenos!</a>
 {% endblock %}

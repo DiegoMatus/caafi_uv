@@ -14,7 +14,8 @@ var colors = ['#1AAEDF', 'F0992A', '#D91B5B', '#F7D947', '#8DC74D', '#F0DEA4', '
 
 	$('#categories').DataTable({
 		autoFill: true,
-		responsive: true,
+		responsive: true
+
 	});	
 	
 	$('#categories tbody tr').on('click', function(){
