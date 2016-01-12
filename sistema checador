@@ -1,0 +1,4 @@
+CRUD de usuarios. (Diferencias entre becario y SS para saber si se asignan horas).
+asignar horario.
+consultar horas (mensuales y totales).
+Persistencia de datos locales sin conexión, y reenviar datos cuando se conecte).
