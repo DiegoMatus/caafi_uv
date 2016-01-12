@@ -1,4 +1,4 @@
-var colors = ['#1AAEDF', '#CA53CE', '#85235B', '#F9C8A7', '#8DC74D', '#F0992A', '#F7D947', '#F0DEA4'];
+var colors = ['#1AAEDF', '#F0992A', '#CA53CE', '#D91B5B', '#F7D947', '#8DC74D', '#F0DEA4', '#F9C8A7', '#85235B'];
 
 	var i = 0;
 	$('.category-content').each(function(){
@@ -39,28 +39,28 @@ var colors = ['#1AAEDF', '#CA53CE', '#85235B', '#F9C8A7', '#8DC74D', '#F0992A', 
 
 	$('#agregar_url').on('submit', function(e){
 		e.preventDefault();
-		swal({
-		  title: "¿Estás seguro?",
-		  text: "Sólo reporta las direcciones que no funcionen correctamente",
-		  type: "warning",
-		  showCancelButton: true,
-		  confirmButtonColor: "#DD6B55",
-		  confirmButtonText: "Reportar",
-		  closeOnConfirm: false
-		},
-		function(){
-		  swal("Reportada!", "Revisaremos la dirección en breve.", "success");
-			$.ajax({
-				url : '/url/add',
-				type: 'POST',
-				data: {
-					link: $('#row-selected #url').text()
-				},
-				success : function(data){
-				},
-				error : function(error){
-					console.log(error);
-				}
+		success : function(data){
+			swal({
+			  title: "¿Estás seguro?",
+			  text: "Sólo reporta las direcciones que no funcionen correctamente",
+			  type: "warning",
+			  showCancelButton: true,
+			  confirmButtonColor: "#DD6B55",
+			  confirmButtonText: "Reportar",
+			  closeOnConfirm: false
+			},
+			function(){
+			  swal("Reportada!", "Revisaremos la dirección en breve.", "success");
+				$.ajax({
+					url : '/url/add',
+					type: 'POST',
+					data: {
+						link: $('#row-selected #url').text()
+					},
+				});
 			});
-		});
+		},
+		error : function(error){
+			console.log(error);
+		}
 	});
