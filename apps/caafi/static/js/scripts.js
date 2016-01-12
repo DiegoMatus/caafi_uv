@@ -1,4 +1,4 @@
-var colors = ['#1AAEDF', '#F0992A', '#CA53CE', '#F7D947', '#8DC74D', '#F0DEA4', '#F9C8A7', '#85235B'];
+var colors = ['#1AAEDF', '#CA53CE', '#F7D947', '#F0992A', '#8DC74D', '#F0DEA4', '#F9C8A7', '#85235B'];
 
 	var i = 0;
 	$('.category-content').each(function(){
@@ -50,17 +50,17 @@ var colors = ['#1AAEDF', '#F0992A', '#CA53CE', '#F7D947', '#8DC74D', '#F0DEA4', 
 		},
 		function(){
 		  swal("Reportada!", "Revisaremos la dirección en breve.", "success");
-		});
-		$.ajax({
-			url : '/url/add',
-			type: 'POST',
-			data: {
-				link: $('#row-selected #url').text()
-			},
-			success : function(data){
-			},
-			error : function(error){
-				console.log(error);
-			}
+			$.ajax({
+				url : '/url/add',
+				type: 'POST',
+				data: {
+					link: $('#row-selected #url').text()
+				},
+				success : function(data){
+				},
+				error : function(error){
+					console.log(error);
+				}
+			});
 		});
 	});
