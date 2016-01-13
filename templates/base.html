@@ -14,6 +14,18 @@
     <body>        
 
         {% block navbar %}{% endblock %}
+        <ol class="breadcrumb">
+          <li><a href="{% url "index" %}">Inicio</a></li>
+          {% if language %}
+            <li><a href="{% url "categories" language.slug %}">{{ language }}</a></li>
+          {% endif %}
+          {% if category %}
+            <li><a href="{% url "subcategories" language.slug category.slug %}">{{ category }}</a></li>
+          {% endif %}
+          {% if subcategory %}
+            <li><a href="{% url "urls" language.slug category.slug subcategory.slug %}">{{ subcategory }}</a></li>
+          {% endif %}
+        </ol>
         <!--Block content-->
         {% block content %}{% endblock %}
 
