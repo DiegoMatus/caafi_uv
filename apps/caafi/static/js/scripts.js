@@ -12,21 +12,13 @@ var colors = ['#1AAEDF', '#CA53CE', '#D91B5B', '#F0992A', '#F7D947', '#8DC74D', 
 
 	$('.subcategory:first-child').addClass('active');
 
-	$('#categories').DataTable({
-		autoFill: true,
-		responsive: true,
-  		"columns": [
-    		{ "width": "20px" },
-    		{ "width": "20px" },
-    		{ "width": "20px" },
-    		{ "width": "20px" },
-    		{ "width": "20px" },
-    		{ "width": "20px" },
-    		{ "width": "20px" },
-    		{ "width": "20px" }
-  		]
+var table = $('#categories').DataTable({
+  tabIndex: 8,
+  dom: '<"fcstTableWrapper"t>lp',
+  bFilter: false,
+  bAutoWidth: false
+});
 
-	});	
 	
 	$('#categories tbody tr').on('click', function(){
 		$('#btn-reported').removeClass('btn-custom');
