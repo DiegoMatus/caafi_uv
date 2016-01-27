@@ -1,4 +1,4 @@
-var colors = ['#1AAEDF', '#CA53CE', '#D91B5B', '#F0992A', '#F7D947', '#8DC74D', '#F0DEA4', '#F9C8A7', '#85235B'];
+var colors = ['#1AAEDF', '#76678B', '#D91B5B', '#F0992A', '#F7D947', '#8DC74D', '#F0DEA4', '#F9C8A7', '#85235B'];
 
 	var i = 0;
 	$('.category-content').each(function(){
