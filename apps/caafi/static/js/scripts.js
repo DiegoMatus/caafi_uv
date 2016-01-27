@@ -12,13 +12,10 @@ var colors = ['#1AAEDF', '#CA53CE', '#D91B5B', '#F0992A', '#F7D947', '#8DC74D', 
 
 	$('.subcategory:first-child').addClass('active');
 
-var table = $('#categories').DataTable({
-  tabIndex: 8,
-  dom: '<"fcstTableWrapper"t>lp',
-  bFilter: false,
-  bAutoWidth: false
-});
-
+	$('#categories').DataTable({
+		autoFill: true,
+		responsive: true,
+	});	
 	
 	$('#categories tbody tr').on('click', function(){
 		$('#btn-reported').removeClass('btn-custom');

@@ -158,3 +158,9 @@ table.dataTable.no-footer {
 #row-selected {
 	background: #AAAAAA;
 }
+
+.description
+{
+    overflow:hidden;
+    width:50%;
+}
