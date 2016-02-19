@@ -30,7 +30,6 @@ class UrlAdmin (admin.ModelAdmin):
 # Register your models here.
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
-admin.site.register(Profile)
 admin.site.register(Language)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Subcategory, SubcategoryAdmin)
