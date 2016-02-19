@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 class ProfileInline(admin.StackedInline):
     model = Profile
     can_delete = False
-    verbose_name_plural = 'Profiles'
+    verbose_name_plural = 'Perfiles'
 
 # Define a new User admin
 class UserAdmin(UserAdmin):
