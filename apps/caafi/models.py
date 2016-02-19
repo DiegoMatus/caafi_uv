@@ -35,7 +35,7 @@ class Profile(models.Model):
     apellidos, username, password que obtiene de una asociación uno a uno con
     con el modelo USER de django, además de los descritos abajo.'''
     user = models.OneToOneField(User)
-    language = models.ForeignKey(Language)
+    language = models.ForeignKey(Language, verbose_name='Idioma', related_name='profiles')
     slug = models.SlugField(max_length=255, unique=True, blank=True, null=True)
 
     class Meta:
