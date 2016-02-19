@@ -2,6 +2,7 @@
 from django.db import models
 from django.utils import timezone
 from django.template.defaultfilters import slugify
+from django.contrib.auth.models import User
 from django.conf import settings
 import uuid
 import os
@@ -27,6 +28,26 @@ class Language(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Profile(models.Model):
+    '''Perfiles de los usuarios de FEITUBE. Cuenta con atributos básicos: nombre,
+    apellidos, username, password que obtiene de una asociación uno a uno con
+    con el modelo USER de django, además de los descritos abajo.'''
+    user = models.OneToOneField(User)
+    language = models.ForeignKey(Language)
+    slug = models.SlugField(max_length=255, unique=True, blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Usuario'
+        verbose_name_plural = 'Usuarios'
+
+    def save(self):
+        self.slug = slugify(str(self.user.get_username()))
+        super(Profile, self).save()
+
+    def __str__(self):
+        return self.user.get_username()
 
 
 #############################################################################################
