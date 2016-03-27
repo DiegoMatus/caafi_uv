@@ -66,6 +66,7 @@ class Category(models.Model):
     class Meta:
         verbose_name = 'Categoría'
         verbose_name_plural = 'Categorías'
+        ordering = ['name']
 
     def save(self):
         self.slug = slugify(str(self.name))
@@ -88,6 +89,7 @@ class Subcategory(models.Model):
     class Meta:
         verbose_name = 'Subcategoría'
         verbose_name_plural = 'Subcategorías'
+        ordering = ['name']
 
     def save(self):
         self.slug = slugify(str(self.name))
@@ -104,6 +106,7 @@ class Competence(models.Model):
     class Meta:
         verbose_name = 'Competencia'
         verbose_name_plural = 'Competencias'
+        ordering = ['name']
 
     def __str__(self):
         return self.name
