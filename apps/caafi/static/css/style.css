@@ -4,7 +4,7 @@
 
 body {
 	padding: 50px 0 100px 0;/*CHANGE RECENT*/
-	background-color: white;
+	background-image: url("/static/img/frances_background.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: bottom right;
