@@ -1,0 +1,79 @@
+{% extends "base_caafi.html" %}
+{% load static from static %}
+{% block title %} Lista de material {% endblock %}
+
+{% block menu %}
+<li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorías<span class="caret"></span></a>
+    <ul class="dropdown-menu" role="menu">
+        {% for category in categories|dictsort:"name" %}
+            <li><a href="{% url "subcategories" category.language.slug category.slug %}">{{category.name}}</a></li>
+        {% endfor %}
+    </ul>
+</li>
+{% endblock %}
+
+{% block content %}
+    <h2 class="title text-center">{{ subcategory }}</h2>
+    <div class="container">
+        <table id="categories" class="display table-bordered table-responsive">
+            <thead>
+            <tr class="title">
+                <th>Nivel</th>
+                <th>Comp primaria</th>
+                <th>Comp secundaria</th>
+                <th>Ejercicio</th>
+                <th>Extensión</th>
+                <th>Correción</th>
+                <th class="description">Descripción</th>
+                <th>Dirección</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for url in urls %}
+                <tr class="urls-list">
+                    {% if url.level == 'A1' %}
+                        <td>{{ url.level }} <i class="text-danger text-A1 fa fa-circle"></i></td>
+                    {% elif url.level == 'A2' %}
+                        <td>{{ url.level }} <i class="text-danger text-A2 fa fa-circle"></i></td>
+                    {% elif url.level == 'B1' %}
+                        <td>{{ url.level }} <i class="text-danger text-B1 fa fa-circle"></i></td>
+                    {% elif url.level == 'B2' %}
+                        <td>{{ url.level }} <i class="text-danger text-B2 fa fa-circle"></i></td>
+                    {% elif url.level == 'C1' %}
+                        <td>{{ url.level }} <i class="text-danger text-C1 fa fa-circle"></i></td>
+                    {% elif url.level == 'C2' %}
+                        <td>{{ url.level }} <i class="text-danger text-C2 fa fa-circle"></i></td>
+                    {% elif url.level == 'T0' %}
+                        <td>{{ url.level }} <i class="text-danger text-T0 fa fa-circle"></i></td>
+                    {% endif %}
+                    <td>{{ url.primary_competence }}</td>
+                    <td>{{ url.secondary_competence }}</td>
+                    <td>{{ url.kind_exercise }}</td>
+                    <td>{{ url.kind_item }}</td>
+                    {% if url.kind_correction == 'SI' %}
+                        <td>Sí, sin explicación</td>
+                    {% elif url.kind_correction == 'SI+' %}
+                        <td>Sí, con explicación</td>
+                    {% elif url.kind_correction == 'NO' %}
+                        <td>Sólo señala errores</td>
+                    {% else %}
+                        <td>No aplica</td>
+                    {% endif %}
+                    <td>{{ url.description }}</td>
+                    <td id="url"><a href="{{ url.address }}" target="_blank">Ir sitio</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <form class="col-xs-12 col-sm-10 col-md-3 col-md-offset-1" method="post" id="agregar_url">{% csrf_token %}
+            <input type="submit" value="Reportar enlace caído" id="btn-reported" class="btn btn-warning btn-custom"/>
+        </form>
+    </div>
+{% endblock %}
+{% block footer %}
+    <p>Centro de Auto Acceso de la Facultad de idiomas</p>
+    <a class="text-success" href="" data-toggle="modal" data-target="#myModal">¿Dudas, comentarios o sugerencias? ¡Escríbenos!</a>
+{% endblock %}

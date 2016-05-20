@@ -26,6 +26,13 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                    <li>                    
+                        <form action="{% url "search" %}" id="search_form" method="POST" accept-charset="utf-8">{% csrf_token %}
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="search" placeholder="nivel, tipo de ejercicio, competencia">
+                            </div>
+                        </form>
+                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                             <img src="{{ language.image.url }}" class="img-responsive col-xs-3 col-xd-offset-3 col-sm-5" /> {{language.name}}<span class="caret"></span>

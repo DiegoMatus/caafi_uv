@@ -10,8 +10,6 @@ var colors = ['#1AAEDF', '#76678B', '#D91B5B', '#F0992A', '#F7D947', '#8DC74D', 
 		$('body').css('background-color', '#EEEEEE');
 	}
 
-	$('.subcategory:first-child').addClass('active');
-
 	$('#categories').DataTable({
 		autoFill: true,
 		responsive: true,

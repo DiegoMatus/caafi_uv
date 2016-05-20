@@ -164,3 +164,7 @@ table.dataTable.no-footer {
     overflow:hidden;
     width:50%;
 }
+
+#search_form {
+	margin-top: 10px;
+}

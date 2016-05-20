@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, render_to_response
 from django.http import JsonResponse
 from apps.caafi.models import Language, Category, Subcategory, Url
 from django.views.decorators.csrf import csrf_exempt
+from django.db.models import Q
 
 # Create your views here.
 def index(request):
@@ -48,3 +49,14 @@ def reported_urls_view(request):
         return JsonResponse(dict({'msj': 'Haz reportado la direccion: ' + url.address}))
     else:
         return render('urls.html')
+
+#										SEARCH VIEW
+##########################################################################################
+def search_view(request):
+	if request.method == "POST":
+		query = request.POST['search']
+		urls = Url.objects.filter(Q(level__icontains=query) | Q(primary_competence__icontains=query) | Q(kind_exercise__icontains=query)).order_by('uploaded')
+		context = { 'videos': urls}
+		return render(request, 'search.html', context)
+	else:
+		return redirect(request.META.get('HTTP_REFERER'))
