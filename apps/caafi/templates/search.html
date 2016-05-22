@@ -2,17 +2,6 @@
 {% load static from static %}
 {% block title %} Lista de material {% endblock %}
 
-{% block menu %}
-<li class="dropdown">
-    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorías<span class="caret"></span></a>
-    <ul class="dropdown-menu" role="menu">
-        {% for category in categories|dictsort:"name" %}
-            <li><a href="{% url "subcategories" category.language.slug category.slug %}">{{category.name}}</a></li>
-        {% endfor %}
-    </ul>
-</li>
-{% endblock %}
-
 {% block content %}
     <h2 class="title text-center">{{ subcategory }}</h2>
     <div class="container">

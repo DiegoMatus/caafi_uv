@@ -53,10 +53,11 @@ def reported_urls_view(request):
 #										SEARCH VIEW
 ##########################################################################################
 def search_view(request):
+	languages = Language.objects.all()
 	if request.method == "POST":
 		query = request.POST['search']
-		urls = Url.objects.filter(Q(level__icontains=query) | Q(primary_competence__icontains=query) | Q(kind_exercise__icontains=query)).order_by('uploaded')
-		context = { 'videos': urls}
+		urls = Url.objects.filter(Q(level__icontains=query) | Q(primary_competence__name__icontains=query) | Q(kind_exercise__name__icontains=query)).order_by('published')
+		context = { 'languages': languages, 'urls': urls}
 		return render(request, 'search.html', context)
 	else:
 		return redirect(request.META.get('HTTP_REFERER'))
